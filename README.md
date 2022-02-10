@@ -1,2 +1,2 @@
 # ansible
-This repo holds the ansible codes
+This repo holds the Ansible codes
