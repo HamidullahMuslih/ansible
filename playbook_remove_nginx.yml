@@ -1,0 +1,11 @@
+---
+
+- hosts: all
+  become: true
+  tasks: 
+
+  - name: remove nginx package  # this could be any name
+    apt:                        # this is module (-m)
+      name: nginx               # this is arg (-a)
+      state: absent             # remove the package, but it is not working idk why
+      autoremove: yes           # remove dependent packages
