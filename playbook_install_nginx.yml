@@ -1,0 +1,13 @@
+---
+
+- hosts: all
+  become: true
+  tasks: 
+
+  - name: install nginx package # this could be any name
+    apt:                        # this is module (-m)
+      name: nginx               # this is arg (-a)
+      state: latest
+  - name: start nginx
+    shell: |
+      systemctl start nginx
