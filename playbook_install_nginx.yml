@@ -8,6 +8,9 @@
     apt:                        # this is module (-m)
       name: nginx               # this is arg (-a)
       state: latest
+    when: ansible_distribution == "Ubuntu"  # condition to only apply if OS is Ubuntu
   - name: start nginx
     shell: |
       systemctl start nginx
+    when: ansible_distribution in  ["Debian", "Ubuntu"] # list variables, this is like OR operation. 
+

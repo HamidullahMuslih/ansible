@@ -9,3 +9,4 @@
       name: nginx               # this is arg (-a)
       state: absent             # remove the package, but it is not working idk why
       autoremove: yes           # remove dependent packages
+    when: ansible_distribution == "Ubuntu"  # condition to only apply if OS is Ubuntu
