@@ -8,6 +8,7 @@
     apt:                        # this is module (-m)
       name: nginx               # this is arg (-a)
       state: latest
+      update_cache: yes         # run apt update
     when: ansible_distribution == "Ubuntu"  # condition to only apply if OS is Ubuntu
   - name: start nginx
     shell: |
