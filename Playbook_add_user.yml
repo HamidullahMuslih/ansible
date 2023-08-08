@@ -1,0 +1,22 @@
+---
+
+- hosts: alive_servers
+  become: true 
+  tasks: 
+  - name: create a user (test)
+    user:
+      name: test
+      group: root
+
+  - name: add test SSH key
+    ansible.builtin.authorized_key:
+      user: test
+      key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAMGZHSbx1ulfn9YM11cYZt4S5ZIOytx/ZogLp8Eb5fB hamidullah_muslih"
+
+  - name: copy a test user's sudoers file
+    ansible.builtin.copy:
+      src: ./test_sudoers_rule
+      dest: /etc/sudoers.d/test_sudoers_rule
+      owner: root
+      group: root
+      mode: 0440
