@@ -1,0 +1,7 @@
+- hosts: alive_servers 
+  become: true 
+  tasks: 
+  - name: copy a file
+    ansible.builtin.copy:
+      src: ./README.md
+      dest: ~/README.md

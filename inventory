@@ -1,1 +1,8 @@
+
+[alive_servers]         # grouping 
 192.168.0.17 #vbox vm
+
+
+[fake server]
+1.1.1.1
+2.2.2.2

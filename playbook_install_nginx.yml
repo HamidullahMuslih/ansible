@@ -5,7 +5,7 @@
   tasks: 
 
   - name: install nginx package # this could be any name
-    apt:                        # this is module (-m)
+    package:                        # this is module (-m)
       name: nginx               # this is arg (-a)
       state: latest
       update_cache: yes         # run apt update
@@ -14,4 +14,3 @@
     shell: |
       systemctl start nginx
     when: ansible_distribution in  ["Debian", "Ubuntu"] # list variables, this is like OR operation. 
-
